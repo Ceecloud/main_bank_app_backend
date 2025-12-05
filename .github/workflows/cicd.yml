@@ -93,7 +93,7 @@ on:
 
 jobs:
   Continues-Integration_build_and_push:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     env:
       ECR_REGISTRY: 805301696583.dkr.ecr.eu-north-1.amazonaws.com
       ECR_REPOSITORY: bank-backendapi
@@ -137,7 +137,7 @@ jobs:
 
   
   Continues-Update_k8s_manifest:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     needs: Continues-Integration_build_and_push
     env:
       # use the SAME registry + repo as above
